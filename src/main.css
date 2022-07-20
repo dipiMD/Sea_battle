@@ -1,0 +1,142 @@
+.main {
+	display: grid;
+	grid-template-columns: 0.7fr 2fr 0.7fr 2fr;
+	grid-template-rows: 10vh 80vh 10vh;
+	justify-content: center;
+	justify-items: center;
+}
+
+.navigator {
+	grid-area: 2 / 1 / 4 / 1;
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr 2fr;
+	border-color: black;
+}
+
+.icon.logout {
+	grid-row: 4 / 4;
+	margin-top: 100%;
+}
+
+.icon {
+	font-size: 10px;
+	text-align: center;
+	align-self: center;
+}
+
+.player.user {
+	grid-area: 2 / 2 / 2 / 2;
+}
+
+.player.pc {
+	grid-area: 2 / 4 / 2 / 4;
+}
+
+.player {
+	display: grid;
+	grid-template-rows: 2fr 1fr;
+}
+
+.board {
+	width: 300px;
+	height: 300px;
+	align-self: center;
+}
+
+.board.first {
+	grid-row: 1 / 1;
+	border: 7px solid #597f99;
+}
+
+.board.second {
+	grid-row: 1 / 1;
+	border: 7px solid #ab2732;
+}
+
+.icon.swords {
+	grid-row: 1 / 1;
+	align-self: center;
+}
+
+.fight {
+	grid-area: 2 / 3 / 2 / 3;
+	display: grid;
+	grid-template-rows: 2fr 1fr;
+
+}
+
+.card-body.ships {
+	width: 300px;
+	height: 100px;
+	align-self: center;
+	grid-row: 2 / 2;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.ship {
+	font-size: 10px;
+	text-align: center;
+	align-self: center;
+}
+
+.card.first {
+	background-color: rgb(232, 239, 241);
+}
+
+.card.second {
+	background-color: rgb(241, 232, 232);
+}
+
+/*----MyStats----*/
+
+.main_stat {
+	display: grid;
+	grid-template-columns: 0.7fr 3.7fr 1fr;
+	grid-template-rows: 10vh 80vh 10vh;
+	justify-content: center;
+	justify-items: center;
+}
+
+.stats {
+	grid-area: 2 / 2 / 2 / 2;
+	justify-self: start;
+	padding-left: 5vw;
+	font-size: 15px;
+}
+
+ol.out {
+	margin-left: 11vw;
+}
+
+ol {
+	margin-left: 5vw;
+}
+
+li {
+	list-style-type: none;
+}
+
+li.gray {
+	color: darkgray;
+}
+
+.best-players {
+	margin-left: 8vw;
+	padding-left: 5px;
+	width: 25rem;
+	font-size: 12px;
+	margin-top: 20px;
+}
+
+.player-login {
+	margin-left: 2vw;
+}
+
+.win-rate {
+	margin-left: 0.5vw;
+}
+
+.game-count {
+	margin-left: 0.5vw;
+}

@@ -1,6 +1,6 @@
 const app = new Application({
-	preparation: PreparationScene
+	preparation: PreparationScene,
+	computer: ComputerScene
 });
 
 app.start("preparation");
-

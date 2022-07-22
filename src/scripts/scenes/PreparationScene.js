@@ -21,7 +21,7 @@ class PreparationScene extends Scene {
 			player.addShip(ship);
 		}
 	}
-	start () {console.log("prep scene start")}
-	update () {console.log("prep scene upd")}
-	stop () {console.log("prep scene stop")}
+	start () {}
+	update () {}
+	stop () {}
 }

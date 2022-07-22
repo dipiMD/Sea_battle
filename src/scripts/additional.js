@@ -1,9 +1,11 @@
+
+
 function getRandomBetween(min, max) {
 	return min + Math.floor(Math.random() * (max - min + 1));
 }
 
 function getRandomFrom(...args) {
-	const index =  Math.floor(Math.random() * args.length);
+	const index = Math.floor(Math.random() * args.length);
 	return args[index];
 }
 
@@ -13,3 +15,8 @@ function isUnderPoint(point, element) {
 
 	return left <= x && x <= left + width && top <= y && y <= top + height;
 }
+
+// function addEventListener(element, ...args) {
+// 	element.addEventListener(...args);
+// 	return () => element.removeEventListener(...args);
+// }

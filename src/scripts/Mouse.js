@@ -71,7 +71,7 @@ class Mouse {
 		});
 	}
 
-	tick () {
+	tick() {
 		this.pX = this.x;
 		this.pY = this.y;
 		this.pUnder = this.under;

@@ -2,15 +2,15 @@ class Scene {
 	name = null;
 	app = null;
 
-	constructor (name, app) {
-		Object.assign(this, { name, app })
+	constructor(name, app) {
+		Object.assign(this, { name, app });
 	}
 
-	init () {}
+	init() { }
 
-	start () {}
+	start() { }
 
-	update () {}
+	update() { }
 
-	stop () {}
+	stop() { }
 }

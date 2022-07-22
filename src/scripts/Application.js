@@ -7,7 +7,7 @@ class Application {
 	scenes = {};
 	activeScene = null;
 
-	constructor (scenes) {
+	constructor(scenes = {}) {
 		const mouse = new Mouse(document.body);
 		const player = new BattlefieldView();
 		const opponent = new BattlefieldView();
@@ -38,7 +38,7 @@ class Application {
 		this.mouse.tick();
 	}
 
-	start (sceneName) {
+	start(sceneName) {
 		if (this.activeScene && this.activeScene.name === sceneName) {
 			return false;
 		}
@@ -58,4 +58,3 @@ class Application {
 		return true;
 	}
 }
-

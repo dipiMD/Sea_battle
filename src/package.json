@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "dbr": "npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all"
+    "dbr": "npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/dipiMD/Sea_battle/issues"
   },
-  "homepage": "https://github.com/dipiMD/Sea_battle#readme"
+  "homepage": "https://github.com/dipiMD/Sea_battle#readme",
+  "dependencies": {
+
+  }
 }

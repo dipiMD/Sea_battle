@@ -8,8 +8,8 @@ class Controllers {
     }
 
     async getUser(req, res) {
-        const {username} = req.params.username;
-        const user = await db.query('SELECT * FROM "users" where "username" = ${username}', username);
+        const username = req.params.username;
+        const user = await db.query('SELECT * FROM "users" where "username" = $1', [username]);
         res.json(user.rows[0]);
     }
 
@@ -20,7 +20,7 @@ class Controllers {
     }
 
     async postStat(req, res) {
-        const {id} = req.params.id;        
+        const id = req.params.id;
         const stat = await db.query('INSERT into "stats" ("user_id") values ($1) RETURNING *', [id]);
         res.json(stat.rows[0]);
     }

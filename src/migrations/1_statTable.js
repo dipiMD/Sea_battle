@@ -10,38 +10,31 @@ module.exports = {
       },
       user_id: {
         type: Sequelize.INTEGER,
-        unique: 1,
-        allowNull: false
+        unique: true,
       },
       played: {
         type: Sequelize.INTEGER,
-        default: 0,
-        allowNull: false
+        defaultValue: 0,
       },
       wins: {
         type: Sequelize.INTEGER,
-        default: 0,
-        allowNull: false
+        defaultValue: 0,
       },
       singleCage: {
         type: Sequelize.INTEGER,
-        default: 0,
-        allowNull: false
+        defaultValue: 0,
       },
       doubleCage: {
         type: Sequelize.INTEGER,
-        default: 0,
-        allowNull: false
+        defaultValue: 0,
       },
       tripleCage: {
         type: Sequelize.INTEGER,
-        default: 0,
-        allowNull: false
+        defaultValue: 0,
       },
       quadroCage: {
         type: Sequelize.INTEGER,
-        default: 0,
-        allowNull: false
+        defaultValue: 0,
       }
     });
 

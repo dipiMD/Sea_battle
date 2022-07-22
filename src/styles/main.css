@@ -38,8 +38,8 @@
 }
 
 .board {
-	width: 300px;
-	height: 300px;
+	/*width: 300px;
+	height: 300px;*/
 	align-self: center;
 }
 
@@ -88,7 +88,58 @@
 	background-color: rgb(241, 232, 232);
 }
 
-/*----MyStats----*/
+.battlefield {
+	position: relative;
+}
+
+.battlefield-table {
+	width: 300px;
+	height: 300px;
+	border-collapse: collapse;
+	border-spacing: 0;
+	background: rgba(124, 128, 183, 0.05);
+}
+
+.battlefield-item {
+	position: relative;
+	width: 32px;
+	height: 32px;
+	border: 1px solid rgba(37, 37, 37, 0.15);
+}
+
+.marker {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 32px;
+	height: 32px;
+	font-size: 13px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+}
+
+.marker-row {
+	left: -37px;
+}
+
+.marker-column {
+	top: -37px;
+}
+
+.ship {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: -3px;
+	border: 3px solid #0400ff;
+	background: rgba(0, 55, 255, 0.45);
+	width: 32px;
+	height: 32px;
+}
+
+/*----MyStats & Rating----*/
 
 .main_stat {
 	display: grid;

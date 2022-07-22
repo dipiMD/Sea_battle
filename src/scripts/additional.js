@@ -3,7 +3,7 @@ function getRandomBetween(min, max) {
 }
 
 function getRandomFrom(...args) {
-	const index =  Math.floor(Math.random() * args.length);
+	const index = Math.floor(Math.random() * args.length);
 	return args[index];
 }
 

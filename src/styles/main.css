@@ -132,11 +132,44 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	margin: -3px;
-	border: 3px solid #0400ff;
-	background: rgba(0, 55, 255, 0.45);
-	width: 32px;
-	height: 32px;
+	margin-right: -0.6px;
+	margin-bottom: -0.6px;
+	border: 3px solid #597f99;
+	background: #597f9969;
+	width: 29px;
+	height: 31px;
+}
+
+.ship-row-1 {
+	width: 31px;
+}
+
+.ship-row-2 {
+	width: 60px;
+}
+
+.ship-row-3 {
+	width: 90px;
+}
+
+.ship-row-4 {
+	width: 121px;
+}
+
+.ship-column-1 {
+	width: 31px;
+}
+
+.ship-column-2 {
+	height: 64px;
+}
+
+.ship-column-3 {
+	height: 95px;
+}
+
+.ship-column-4 {
+	height: 127px;
 }
 
 /*----MyStats & Rating----*/

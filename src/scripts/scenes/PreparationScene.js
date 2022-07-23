@@ -31,6 +31,14 @@ class PreparationScene extends Scene {
 		this.fight = this.fight.bind(this);
 	}
 	start () {
+		const { player, opponent } = this.app;
+
+		opponent.clear();
+		player.removeAllShots();
+		player.ships.forEach((ship) => (ship.killed = false));
+
+	
+
 		const randomizeButton = document.querySelector('[data-action="randomize"]');
 		randomizeButton.addEventListener('click', this.randomize);
 	}
@@ -137,7 +145,7 @@ class PreparationScene extends Scene {
 		const withoutShipItems = matrix.flat().filter((item) => !item.ship);
 		let untouchables = [];
 
-		untouchables = getRandomSeveral(withoutShipItems, 20);
+		untouchables = getRandomSeveral(withoutShipItems, 25);
 
 		this.app.start("computer", untouchables);
 	}

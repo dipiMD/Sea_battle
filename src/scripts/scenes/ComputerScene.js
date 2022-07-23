@@ -28,15 +28,41 @@ class ComputerScene extends Scene {
 		opponent.randomize(ShipView);
 
 		this.untouchables = untouchables;
+
+		const repeatbutton = document.querySelector('[data-action="repeat"]');
+		repeatbutton.addEventListener('click', () => {
+			this.app.start("preparation");
+		});
+	}
+
+	stop() {
+		const repeatbutton = document.querySelector('[data-action="repeat"]');
+		repeatbutton.removeEventListener('click', () => {
+			this.app.start("preparation");
+		});
 	}
 
 	update() {
 		const { mouse, opponent, player } = this.app;
 
+		const isEnd = opponent.loser || player.loser;
 
 		const cells = opponent.cells.flat();
 		cells.forEach((cell) => cell.classList.remove("battlefield-item__active"));
 
+		if (isEnd) {
+			if (opponent.loser) {
+				document.querySelector('.battle-now').src = "src/img/prise.png";
+				document.querySelector('.battle-text').textContent = "You win!!";
+			} else {
+				document.querySelector('.battle-now').src = "src/img/sad.png";
+				document.querySelector('.battle-text').textContent = "You lost..";
+			}
+
+			document.querySelector(".repeat").classList.remove("hidden");
+
+			return;
+		}
 
 		if (isUnderPoint(mouse, opponent.table)) {
 			const cell = cells.find((cell) => isUnderPoint(mouse, cell));
@@ -104,8 +130,6 @@ class ComputerScene extends Scene {
 	}
 
 	updateCounter(counter, countDivs) {
-		console.log(counter);
-		console.log(countDivs);
 		for (let i = 0; i < 4; i++)
 		{
 			countDivs[i].textContent = counter[i];

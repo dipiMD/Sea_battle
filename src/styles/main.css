@@ -25,15 +25,15 @@
 	align-self: center;
 }
 
-.player.user {
+.battleside.user {
 	grid-area: 2 / 2 / 2 / 2;
 }
 
-.player.pc {
+.battleside.pc {
 	grid-area: 2 / 4 / 2 / 4;
 }
 
-.player {
+.battleside {
 	display: grid;
 	grid-template-rows: 2fr 1fr;
 }
@@ -79,6 +79,11 @@
 	font-size: 10px;
 	text-align: center;
 	align-self: center;
+	user-select: none;
+}
+
+.ship-count {
+	font-weight: bold;
 }
 
 .card.first {
@@ -118,6 +123,10 @@
 	width: 32px;
 	height: 32px;
 	border: 1px solid rgba(37, 37, 37, 0.15);
+}
+
+.battlefield-item__active {
+	background: #ab273218;
 }
 
 .marker {
@@ -179,6 +188,71 @@
 .ship-column-4 {
 	height: 129px;
 }
+
+.shot {
+	user-select: none;
+	width: 32px;
+	height: 32px;
+	text-align: center;
+	display: flex;
+	position: absolute;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.shot-missed {
+	/* color: gray; */
+	color: #1d1d1d;
+}
+
+.shot-wounded {
+	color: #ab2732;
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 32px;
+}
+
+.shot-wounded::after {
+	width: calc(32px / 1.15);
+	height: calc(33px);
+}
+
+.shot-wounded::before {
+	width: calc(32px / 1.15);
+	height: calc(33px);
+}
+
+
+/*.shot-wounded::after {
+	content: " ";
+	width: calc(32px * 1.3);
+	height: calc(32px * 1.3);
+	border-top: 2px solid #ab2732;
+	position: absolute;
+	z-index: -1;
+	transform: rotate(45deg);
+	top: 9px;
+	left: -20px;
+}
+
+.shot-wounded::before {
+	content: " ";
+	width: calc(32px * 1.3);
+	height: calc(32px * 1.3);
+	border-top: 2px solid #ab2732;
+	position: absolute;
+	z-index: -1;
+	transform: rotate(-45deg);
+	top: 9px;
+	left: 9px;
+}*/
+
+.shot-killed {
+	/*margin: -3px;*/
+	border: 3px solid #ab2732;
+	background-color: #ab273227;
+}
+
 
 /*----MyStats & Rating----*/
 

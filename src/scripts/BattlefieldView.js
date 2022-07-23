@@ -98,6 +98,34 @@ class BattlefieldView extends Battlefield {
 		return true;
 	}
 
+	addShot(shot) {
+		if (!super.addShot(shot)) {
+			return false;
+		}
+
+		this.polygon.append(shot.div);
+
+		const cell = this.cells[shot.y][shot.x];
+		const cellRect = cell.getBoundingClientRect();
+		const rootRect = this.root.getBoundingClientRect();
+
+		shot.div.style.left = `${cellRect.left - rootRect.left}px`;
+		shot.div.style.top = `${cellRect.top - rootRect.top}px`;
+
+		return true;
+	}
+
+	removeShot(shot) {
+		if (!super.removeShot(shot)) {
+			return false;
+		}
+
+		if (Array.prototype.includes.call(this.polygon.children, shot.div)) {
+			shot.div.remove();
+		}
+
+		return true;
+	}
 
 	isUnder(point) {
 		return (isUnderPoint(point, this.root));

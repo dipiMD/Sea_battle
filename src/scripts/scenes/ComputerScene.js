@@ -15,7 +15,6 @@ class ComputerScene extends Scene {
 						   document.querySelector(".ship-count.opponent.x3"),
 						   document.querySelector(".ship-count.opponent.x2"),
 						   document.querySelector(".ship-count.opponent.x1"));
-
 	}
 
 	start(untouchables) {
@@ -33,6 +32,9 @@ class ComputerScene extends Scene {
 		repeatbutton.addEventListener('click', () => {
 			this.app.start("preparation");
 		});
+
+		this.setCounter(countPlayer);
+		this.setCounter(countOpponent);
 	}
 
 	stop() {
@@ -127,6 +129,13 @@ class ComputerScene extends Scene {
 			}
 		}
 		return (arr.reverse());
+	}
+
+	setCounter(countDivs) {
+		countDivs[0].textContent = 1;
+		countDivs[1].textContent = 2;
+		countDivs[2].textContent = 3;
+		countDivs[3].textContent = 4;
 	}
 
 	updateCounter(counter, countDivs) {

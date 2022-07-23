@@ -27,6 +27,7 @@ class PreparationScene extends Scene {
 			const ship = new ShipView(size, direction, startX, startY);
 			player.addShip(ship);
 		}
+
 		this.randomize = this.randomize.bind(this);
 		this.fight = this.fight.bind(this);
 	}
@@ -37,7 +38,14 @@ class PreparationScene extends Scene {
 		player.removeAllShots();
 		player.ships.forEach((ship) => (ship.killed = false));
 
-	
+		this.manually();
+
+		document.querySelector('.repeat').classList.add("hidden");
+		document.querySelector('.battle-now').src = "src/img/swords.png";
+		document.querySelector('.battle-text').textContent = "Fight!";
+		document.querySelector(".random").classList.remove("hidden");
+		document.querySelector('.card.first').classList.add("hidden");
+		document.querySelector('.card.second').classList.add("hidden");
 
 		const randomizeButton = document.querySelector('[data-action="randomize"]');
 		randomizeButton.addEventListener('click', this.randomize);
@@ -120,6 +128,17 @@ class PreparationScene extends Scene {
 		}
 	}
 
+	manually() {
+		const { player } = this.app;
+
+		player.removeAllShips();
+
+		for (const { size, direction, startX, startY } of shipDatas) {
+			const ship = new ShipView(size, direction, startX, startY);
+			player.addShip(ship);
+		}
+	}
+
 	randomize() {
 		const { player } = this.app;
 
@@ -150,3 +169,4 @@ class PreparationScene extends Scene {
 		this.app.start("computer", untouchables);
 	}
 }
+

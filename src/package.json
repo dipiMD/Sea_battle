@@ -1,0 +1,25 @@
+{
+  "name": "sea_battle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dbr": "npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dipiMD/Sea_battle.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dipiMD/Sea_battle/issues"
+  },
+  "homepage": "https://github.com/dipiMD/Sea_battle#readme"
+}

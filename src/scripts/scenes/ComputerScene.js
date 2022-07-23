@@ -1,8 +1,24 @@
+const countPlayer = [];
+const countOpponent = [];
+
 class ComputerScene extends Scene {
 	untouchables = [];
 	playerTurn = true;
 
-	start (untouchables) {
+	init() {
+		countPlayer.push(document.querySelector(".ship-count.player.x4"),
+						 document.querySelector(".ship-count.player.x3"),
+						 document.querySelector(".ship-count.player.x2"),
+						 document.querySelector(".ship-count.player.x1"));
+
+		countOpponent.push(document.querySelector(".ship-count.opponent.x4"),
+						   document.querySelector(".ship-count.opponent.x3"),
+						   document.querySelector(".ship-count.opponent.x2"),
+						   document.querySelector(".ship-count.opponent.x1"));
+
+	}
+
+	start(untouchables) {
 		const { opponent } = this.app;
 
 		const randomButton = document.querySelector(".random");
@@ -38,14 +54,10 @@ class ComputerScene extends Scene {
 					if (result) {
 						this.playerTurn = shot.variant === "miss" ? false : true;
 
-						// TODO: обновление поля количества кораблей, если корабль убит
-
-						//if (shot.variant === "killed") {
-						//	for (let i = 0; i < 10; i++) {
-						//		const ship = opponent.ships[i];
-
-
-						//}
+						if (shot.variant === "killed") {
+							let counter = this.countShipStats(opponent);
+							this.updateCounter(counter, countOpponent);
+						}
 					}
 				}
 			}
@@ -70,17 +82,33 @@ class ComputerScene extends Scene {
 
 				if (result) {
 					this.playerTurn = shot.variant === "miss" ? true : false;
-
-					// TODO: обновление поля количества кораблей, если корабль убит
+					if (shot.variant === "killed") {
+						let counter = this.countShipStats(player);
+						this.updateCounter(counter, countPlayer);
+					}
 				}
 			}
 		}
+	}
 
-		//if (this.playerTurn) {
-		//	this.status.textContent = "Ваш ход:";
-		//} else {
-		//	this.status.textContent = "Ход комьютера:";
-		//}
+	countShipStats(user) {
+		let arr = [0, 0, 0, 0];
 
+		for (let i = 0; i < 10; i++) {
+			const ship = user.ships[i];
+			if (!ship.killed) {
+				arr[ship.size - 1] += 1;
+			}
+		}
+		return (arr.reverse());
+	}
+
+	updateCounter(counter, countDivs) {
+		console.log(counter);
+		console.log(countDivs);
+		for (let i = 0; i < 4; i++)
+		{
+			countDivs[i].textContent = counter[i];
+		}
 	}
 }

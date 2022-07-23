@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js",
     "dbr": "npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
   },
   "repository": {
     "type": "git",
@@ -18,8 +21,5 @@
   "bugs": {
     "url": "https://github.com/dipiMD/Sea_battle/issues"
   },
-  "homepage": "https://github.com/dipiMD/Sea_battle#readme",
-  "dependencies": {
-
-  }
+  "homepage": "https://github.com/dipiMD/Sea_battle#readme"
 }

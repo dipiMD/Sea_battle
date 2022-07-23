@@ -1,7 +1,6 @@
-﻿const db = require('../db');
+﻿const db = require('../js/db');
 
 class Controllers {
-
     async getUsers(req, res) {
         const users = await db.query('SELECT * FROM "users"')
         res.json(users.rows);
@@ -20,7 +19,7 @@ class Controllers {
     }
 
     async postStat(req, res) {
-        const id = req.params.id;
+        const {id} = req.body;
         const stat = await db.query('INSERT into "stats" ("user_id") values ($1) RETURNING *', [id]);
         res.json(stat.rows[0]);
     }

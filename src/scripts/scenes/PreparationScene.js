@@ -129,6 +129,16 @@ class PreparationScene extends Scene {
 		cardFirst.classList.remove('hidden');
 		cardSecond.classList.remove('hidden');
 		document.querySelector('.battle-now').src = "src/img/swords_ready.png";
-		this.app.start("computer");
+		this.startComputer();
+	}
+
+	startComputer() {
+		const matrix = this.app.player.matrix;
+		const withoutShipItems = matrix.flat().filter((item) => !item.ship);
+		let untouchables = [];
+
+		untouchables = getRandomSeveral(withoutShipItems, 20);
+
+		this.app.start("computer", untouchables);
 	}
 }
